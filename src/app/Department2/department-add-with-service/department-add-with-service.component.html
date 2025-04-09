@@ -1,0 +1,17 @@
+<input type="text" [(ngModel)]="dept.id" class="form-control" placeholder="Enter Department Id">
+<br>
+<input type="text" [(ngModel)]="dept.name" class="form-control" placeholder="Enter Department Name" >
+<br>
+<select [(ngModel)]="dept.location" class="form-control" placeholder="Enter Department Location" >
+    <option value="Cairo" >Cairo</option>
+    <option value="Zagazig">Zagazig</option>
+    <option value="Alex">Alex</option>
+    <option value="Mansoura">Mansoura</option>
+</select>
+
+<br>
+
+<button class="btn btn-primary" (click)="save()">Save</button>
+
+
+<br><br>

@@ -1,0 +1,28 @@
+import { Component } from '@angular/core';
+import { RouterOutlet } from '@angular/router';
+import { NavComponent } from './nav/nav.component';
+import { FooterComponent } from './footer/footer.component';
+import { StudentComponent } from './student/student.component';
+import { CourseComponent } from './course/course.component';
+import { DepartmentListComponent } from "./Department/department-list/department-list.component";
+import { DepartmentDetailsComponent } from "./Department/department-details/department-details.component";
+import { DepartmentListWithServiceComponent } from "./Department2/department-list-with-service/department-list-with-service.component";
+
+@Component({
+  selector: 'app-root',
+  imports: [
+    RouterOutlet,
+    NavComponent,
+    FooterComponent,
+    StudentComponent,
+    CourseComponent,
+    DepartmentListComponent,
+    DepartmentDetailsComponent,
+    DepartmentListWithServiceComponent
+],
+  templateUrl: './app.component.html',
+  styleUrl: './app.component.css',
+})
+export class AppComponent {
+  title = 'firstProj';
+}

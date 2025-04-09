@@ -1,0 +1,14 @@
+.main-content {
+  margin-top: 80px;
+  margin-bottom: 100px;
+  min-height: calc(100vh - 180px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.content {
+  max-width: 800px;
+  padding: 20px;
+}

@@ -1,0 +1,33 @@
+
+<table class="table table-bordered table-hover">
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Name</th>
+            <th>Location</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @for (item of depts; track item.id) {
+        <tr>
+            <td>{{ item.id }}</td>
+            <td>{{ item.name }}</td>
+            <td>{{ item.location }}</td>
+            <td>
+                <a class="btn btn-sm btn-info me-2" (click)="Dept = item">Details</a>
+                <a class="btn btn-sm btn-danger me-2" (click)="depts.splice(depts.indexOf(item), 1)">Delete</a>
+                <a class="btn btn-sm btn-warning me-2" (click)="update(item)">Edit</a>
+                
+            </td>
+        </tr>
+        }
+    </tbody>
+</table>
+
+<app-department-details [dept]="Dept"></app-department-details>
+
+<app-department-add (onAdd)="depts.push($event)"></app-department-add>
+
+<app-department-update [dept]="updatedept" (onUpdate)="update($event)"></app-department-update>
+

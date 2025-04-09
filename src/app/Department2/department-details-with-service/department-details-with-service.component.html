@@ -1,0 +1,6 @@
+@if (flag) {
+<div class="alert alert-primary" role="alert">
+    <strong>{{ dept.id }}  {{ dept.name }}  {{ dept.location }}</strong>
+</div>
+}
+<button type="button" class="btn btn-primary" (click)="flag = !flag">Show Details</button>
