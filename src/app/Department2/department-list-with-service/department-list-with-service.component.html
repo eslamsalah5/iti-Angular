@@ -1,3 +1,6 @@
+<a class="btn btn-primary" routerLink="/departments/add">Add</a>
+<br><br>
+
 <table class="table table-bordered table-hover">
   <thead>
     <tr>
@@ -14,23 +17,18 @@
       <td>{{ item.name }}</td>
       <td>{{ item.location }}</td>
       <td>
-        <a class="btn btn-sm btn-info me-2" (click)="deptId = item.id!"
+        <!-- <a class="btn btn-sm btn-info me-2" (click)="deptId = item.id!"
+          >Details</a
+        > -->
+        <a class="btn btn-sm btn-info me-2"  routerLink="/departments/details/{{item.id}}"
           >Details</a
         >
         <a class="btn btn-sm btn-danger me-2" (click)="delete(item)">Delete</a>
-        <a class="btn btn-sm btn-warning me-2" (click)="update(item)">Edit</a>
+        <!-- <a class="btn btn-sm btn-warning me-2" (click)="update(item)">Edit</a> -->
+        <a class="btn btn-sm btn-warning me-2" routerLink="/departments/edit/{{item.id}}">Edit</a>
       </td>
     </tr>
     }
   </tbody>
 </table>
 
-<app-department-details-with-service
-  [id]="deptId"
-></app-department-details-with-service>
-
-<app-department-add-with-service></app-department-add-with-service>
-
-<app-department-edit-with-service
-  [dept]="updatedept"
-></app-department-edit-with-service>

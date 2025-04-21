@@ -1,3 +1,4 @@
+@import '../node_modules/@syncfusion/ej2-material-theme/styles/material.css';
 /* Import Bootstrap CSS */
 @import "bootstrap/dist/css/bootstrap.min.css";
 

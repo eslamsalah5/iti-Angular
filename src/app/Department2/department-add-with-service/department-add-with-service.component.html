@@ -1,17 +1,30 @@
-<input type="text" [(ngModel)]="dept.id" class="form-control" placeholder="Enter Department Id">
-<br>
-<input type="text" [(ngModel)]="dept.name" class="form-control" placeholder="Enter Department Name" >
-<br>
-<select [(ngModel)]="dept.location" class="form-control" placeholder="Enter Department Location" >
-    <option value="Cairo" >Cairo</option>
-    <option value="Zagazig">Zagazig</option>
-    <option value="Alex">Alex</option>
-    <option value="Mansoura">Mansoura</option>
-</select>
-
-<br>
-
-<button class="btn btn-primary" (click)="save()">Save</button>
-
-
-<br><br>
+<form action="" [formGroup]="deptForm">
+    <input type="text" formControlName="id" id="id" class="form-control" placeholder="Enter Department Id" >
+     
+    @if (id.invalid && id.touched) {
+        @if (id.errors?.['required']) {
+            <span class="text-danger">Id is required</span>
+        }
+    }
+    <br>
+    <input type="text" formControlName="name" class="form-control" placeholder="Enter Department Name"  >
+     @if (name.invalid && name.touched) {
+        @if (name.errors?.['required']) {
+            <span class="text-danger">name is required</span>
+        }
+    }
+    <br>
+    <select formControlName="location" class="form-control" placeholder="Enter Department Location" >
+        <option value="Cairo" >Cairo</option>
+        <option value="Zagazig">Zagazig</option>
+        <option value="Alex">Alex</option>
+        <option value="Mansoura">Mansoura</option>
+    </select>
+     @if (location.invalid && location.touched) {
+        @if (location.errors?.['required']) {
+            <span class="text-danger">location is required</span>
+        }
+    }
+    <br>
+    <button class="btn btn-primary" (click)="save()" [disabled]="deptForm.invalid">Save</button>
+</form>

@@ -18,7 +18,7 @@ export class DeptService {
   }
 
   getDepartmentById(id: number): Department {
-    return this.departments.find((dept) => dept.id === id) as Department;
+    return this.departments.find((d) => d.id == id) as Department;
   }
 
   addDepartment(dept: Department): void {

@@ -1,0 +1,144 @@
+<form action="" #stdForm="ngForm" (ngSubmit)="Save(stdForm)">
+  <div class="form-group">
+    <input
+      type="number"
+      [(ngModel)]="student.St_Id"
+      name="id"
+      required
+      pattern="[0-9]*"
+      ngModel="id"
+      #stdId="ngModel"
+      class="form-control"
+      id="id"
+      placeholder="Enter id"
+    />
+    <span class="text-danger" *ngIf="stdId.invalid && stdId.touched"
+      >Id is required</span
+    >
+    <br />
+  </div>
+  <div class="form-group">
+    <input
+      type="text"
+      [(ngModel)]="student.St_Fname"
+      name="fName"
+      #stdName="ngModel"
+      required
+      pattern="[a-zA-Z]*"
+      ngModel="fName"
+      class="form-control"
+      id="fName"
+      placeholder="Enter First Name"
+    />
+    <span class="text-danger" *ngIf="stdName.invalid && stdName.touched"
+      >First Name is required</span
+    >
+    <br />
+  </div>
+  <div class="form-group">
+    <input
+      type="text"
+      [(ngModel)]="student.St_Lname"
+      name="lName"
+      #stdLName="ngModel"
+      required
+      pattern="[a-zA-Z]*"
+      ngModel="lName"
+      class="form-control"
+      id="lName"
+      placeholder="Enter Last Name"
+    />
+    <span class="text-danger" *ngIf="stdLName.invalid && stdLName.touched">
+      <small *ngIf="stdLName.errors?.['required']">Last Name is required</small>
+    </span>
+    <br />
+  </div>
+  <div class="form-group">
+    <input
+      type="number"
+      [(ngModel)]="student.St_Age"
+      name="age"
+      #stdAge="ngModel"
+      required
+      min="18"
+      max="30"
+      pattern="[0-9]*"
+      ngModel="age"
+      class="form-control"
+      id="age"
+      placeholder="Enter Age"
+    />
+    <span class="text-danger" *ngIf="stdAge.invalid && stdAge.touched">
+      <small *ngIf="stdAge.errors?.['required']">Age is required</small>
+      <small *ngIf="stdAge.errors?.['min']">Age must be greater than 18</small>
+      <small *ngIf="stdAge.errors?.['max']">Age must be less than 30</small>
+    </span>
+    <br />
+  </div>
+
+  <div class="form-group">
+    <input
+      type="text"
+      [(ngModel)]="student.St_Address"
+      name="address"
+      #stdAddress="ngModel"
+      required
+      pattern="[a-zA-Z]*"
+      ngModel="address"
+      class="form-control"
+      id="address"
+      placeholder="Enter Address"
+    />
+    <span class="text-danger" *ngIf="stdAddress.invalid && stdAddress.touched">
+      <small *ngIf="stdAddress.errors?.['required']">Address is required</small>
+    </span>
+    <br />
+  </div>
+
+  <!-- <div class="form-group">
+  <input
+    type="email"
+    [(ngModel)]="student.email"
+    name="email"
+    #stdEmail="ngModel"
+    required
+    pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}"
+    ngModel="email"
+    class="form-control"
+    id="email"
+    placeholder="Enter Email"
+  />
+  <span class="text-danger" *ngIf="stdEmail.invalid && stdEmail.touched">
+    <small *ngIf="stdEmail.errors?.['required']">Email is required</small>
+    <small *ngIf="stdEmail.errors?.['pattern']">Invalid Email</small>
+  </span>
+  <br />
+</div> -->
+  <!-- <div class="form-group">
+  <input
+    type="text"
+    [(ngModel)]="student."
+    name="DeptName"
+    #stdDepId="ngModel"
+    required
+    ngModel="DeptName"
+    class="form-control"
+    id="DeptName"
+    placeholder="Enter Department Name"
+  />
+  <span class="text-danger" *ngIf="stdDepId.invalid && stdDepId.touched">
+    <small *ngIf="stdDepId.errors?.['required']">Department Id is required</small>
+  </span>
+  <br />
+</div> -->
+  <br />
+
+  <button
+    type="submit"
+    class="btn btn-primary"
+    (click)="Save(stdForm)"
+    [disabled]="!stdForm.valid"
+  >
+    Save
+  </button>
+</form>

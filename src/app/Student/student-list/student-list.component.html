@@ -1,0 +1,29 @@
+<a class="btn btn-primary" routerLink="/students/add">Add</a>
+<br><br>
+
+<table class="table table-bordered table-hover">
+  <thead>
+    <tr>
+      <th>Id</th>
+      <th>Name</th>
+      <th>Age</th>
+      <th>Department</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    @for (item of MyStudents; track $index) {
+    <tr>
+      <td>{{item.id}}</td>
+      <td>{{item.fullName}}</td>
+      <td>{{item.age}}</td>
+      <td>{{item.deptName}}</td>
+      <td>
+        <a class="btn btn-sm btn-info me-2" routerLink="/student/{{item.id}}" >Details</a>
+        <a class="btn btn-sm btn-danger me-2" (click)="deleteStudent(item.id!)" >Delete</a>
+        <a class="btn btn-sm btn-warning me-2" routerLink="/students/edit/{{item.id}}">Edit</a>
+      </td>
+    </tr>
+    }
+  </tbody>
+</table>

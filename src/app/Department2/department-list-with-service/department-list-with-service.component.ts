@@ -5,6 +5,7 @@ import { DepartmentDetailsWithServiceComponent } from "../department-details-wit
 import { Department } from '../../Models/department';
 import { DepartmentAddWithServiceComponent } from "../department-add-with-service/department-add-with-service.component";
 import { DepartmentEditWithServiceComponent } from "../department-edit-with-service/department-edit-with-service.component";
+import { RouterLink, RouterOutlet } from '@angular/router';
 
 @Component({
   selector: 'app-department-list-with-service',
@@ -13,6 +14,8 @@ import { DepartmentEditWithServiceComponent } from "../department-edit-with-serv
     DepartmentDetailsWithServiceComponent,
     DepartmentAddWithServiceComponent,
     DepartmentEditWithServiceComponent,
+    RouterLink,
+    RouterOutlet
   ],
   templateUrl: './department-list-with-service.component.html',
   styleUrl: './department-list-with-service.component.css',
